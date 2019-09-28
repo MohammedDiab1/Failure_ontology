@@ -1,0 +1,14 @@
+<package>
+  <name>geom_ontology</name>
+  <version>1.0.0</version>
+  <description>failure_ontology</description>
+  <maintainer email="mohammed.diab@upc.edu">Mohammed Diab</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ease-crc.org</url>
+
+  <author>Mohammed Diab</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

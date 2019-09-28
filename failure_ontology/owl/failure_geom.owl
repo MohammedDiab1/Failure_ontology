@@ -1,0 +1,1273 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ease-crc.org/ont/geom.owl#"
+     xml:base="http://www.ease-crc.org/ont/geom.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:EASE="http://www.ease-crc.org/ont/EASE.owl#">
+    <owl:Ontology rdf:about="http://www.ease-crc.org/ont/geom.owl">
+        <owl:imports rdf:resource="http://www.ease-crc.org/ont/ROS.owl"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#describesAsCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#describesAsCause">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:comment>´caused by´</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#describesAsTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#describesAsTreatment">
+        <owl:equivalentProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#hasSolver"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#hasResource -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#hasResource">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+        <rdfs:label>has resource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#hasResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#hasResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart"/>
+        <rdfs:label>has result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#hasSoftwareAgent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#hasSoftwareAgent">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent"/>
+        <rdfs:label>has software agent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#hasSolver -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#hasSolver">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#describes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#hasStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#hasStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality"/>
+        <rdfs:label>has status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#isAnsweredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent"/>
+        <rdfs:label>is answered by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#isAskedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#isAskedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#involvesAgent"/>
+        <rdfs:label>is asked by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#narrativeRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#narrativeRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#usesConcept"/>
+        <owl:inverseOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRoleOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#narrativeRoleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/geom.owl#narrativeRoleOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptUsedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ease-crc.org/ont/ROS.owl#Querying -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/ROS.owl#Querying">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#hasResult"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingResult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAskedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#hasStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ActuatorFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ActuatorFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>A failure occurring in a Physical agent&apos;s actuators.
+
+Somewhat loosely speaking, an actuator is a body part the agent uses to influence its environment somehow. In fact, the previous statement is often presented as a definition for an actuator.
+
+However, in actual use, a distinction is made between one electric motor and an entire arm-- although both contribute to enabling the agent to change its environment, the arm is not called an actuator.
+
+The difference is that one actuator, usually, has a space of control signals that has a single degree of freedom. E.g., the control signal for a motor is the current through it, which is one single number at any point in time. In contrast, the control signal space for an arm has at least as many degrees of freedom as the arm has motors.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#AgentiveParticipant -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#AgentiveParticipant">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureNarrativeRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#EnactedPlan"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureExplanation"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#PursuedGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ArmFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ArmFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>This is a failure occuring in a Physical agent&apos;s &quot;arms&quot;: body parts the agent uses to position its end effectors.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#BatteryFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#BatteryFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#ElectricalFailure"/>
+        <rdfs:comment>From a &quot;nature of interactions&quot; perspective, this is a failure which prevents an Agent to act anymore because of a lack of electrical energy.
+
+From a &quot;locus of interactions&quot; perspective, this is a failure of the specific body part charged with storing energy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#BodyFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#BodyFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalAgent"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A failure which occurs because of conditions in the body of the Physical Agent participant of the classified Event.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#BodyPartFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyFailure"/>
+        <rdfs:comment>A failure occurring because of a specific body part of an Agent. What is considered important for this failure is the locus of the physical interactions that caused it, ie. the specific body parts involved.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#CapabilityFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#CapabilityFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#InceptionFailure"/>
+        <rdfs:comment>Capability failures occur when an Agent attempts something which proves impossible for them to perform.
+
+They may happen because the environment the Agent operates in lacks the affordances needed to enable a successful achievement of the Agent&apos;s goals, or because the Agent lacks the capability to achieve the goal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#CollisionChecker -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionChecker">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#CollisionQuery -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionQuery">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricQuerying"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#CollisionChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#CollisionChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#CollisionWithFixedObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithFixedObject">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#CollisionChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#CollisionWithMovableObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithMovableObject">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#CollisionChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#CommunicationFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#CommunicationFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:allValuesFrom>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+                                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:allValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:comment>Classifies an Event that involves some Agents exchanging information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ConfigurationNotReached -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ConfigurationNotReached">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#EndStateFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:comment>An Agent completed a Task that required putting some objects in a particular spatial arrangement (for example, placing one of its end effectors at a particular pose, or positioning some external objects in a certain way relative to each other, or the Agent positioning itself at a particular location in the world).
+
+However, the actual arrangement produced by the Agent is not satisfactory to its Goal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ElectricalFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ElectricalFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyFailure"/>
+        <rdfs:comment>A failure involving an electrical system in one of the participant Physical objects of the classified Event. What is considered important for this failure is the nature of the physical interactions involved (ie., electrical) rather than their locus at specific body parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#EnactedPlan -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#EnactedPlan">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureNarrativeRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Plan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureExplanation"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#PursuedGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#EndEffectorFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#EndEffectorFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>This is a failure located in a Physical agent&apos;s &quot;end effector&quot; or &quot;gripper&quot;: a body part the agent uses to physically interact with objects via manipulation actions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#EndStateFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#EndStateFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#InceptionFailure"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#PerformanceFailure"/>
+        <rdfs:comment>A failure of completion, that is, a failure profiling the end state of an Agent&apos;s actions.
+
+In some loose sense, all failures are end state failures, so to have this be a meaningful concept one should be parsimonious in using it when doing analysis.
+
+Specifically, an Event might be classified to be an EndStateFailure if it results in a state that plausibly could have been conformant to the Agent&apos;s goal. In other words, the Agent appears to have completed the action, but the result does not actually conform to the Agent&apos;s intention.
+
+This is to contrast with situations where the Agent is prevented from completing an action, for example because of a failure in the Agent&apos;s mechanical system, and also in contrast with situations where the Agent cannot begin an action at all, because it lacks the capability to perform it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ExecutionPhase -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ExecutionPhase">
+        <owl:equivalentClass rdf:resource="http://www.ease-crc.org/ont/geom.owl#PerformanceFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureDiagnosis -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureDiagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsTreatment"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSolver"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureExplanation -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureExplanation">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureNarrativeRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureDiagnosis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#PursuedGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureNarrative -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureNarrative">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#AgentiveParticipant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#EnactedPlan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureExplanation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#PursuedGoal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Descriptive context in which an Agent, in the pursuit of some Goal, enacts a Plan to execute a Task. However, the outcome of the Agent&apos;s actions is not in accordance of the Goal because of a FailureSymptom.
+
+In the above, Agent, Goal, Plan, Task, FailureSymptom are to be understood as roles, rather than individuals of similarly named classes (though in some cases, fillers of these roles are constrained to be individuals of the named classes, for example FailureSymptom).
+
+The FailureNarrative may further include an Explanation of the failure in terms of a FailureDiagnostic.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureNarrativeRole -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureNarrativeRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureResult -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureResult">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingResult"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureSolver -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureSolver">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#FailureSymptom -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureSymptom">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#EventType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A FailureSymptom provides a simple classification label to some Event or series of Events, and interprets them as a failure of some sort.
+
+In computer systems, it is associated with error signals.
+
+FailureSymptoms carry very little information about the causal chain that resulted in the error; for a more comprehensive treatment of how an error came about, one would look at a FailureDiagnostic.
+
+So for example, a &quot;file not found&quot; signal is a symptom; it purely reports a failure of type ResourceAvailability. Adding information about what file didn&apos;t exist would diagnose the problem.</rdfs:comment>
+        <rdfs:comment>NOTE: unless DisjointWith relations are explicitly indicated, FailureSymptom types can combine.
+
+For example, something like CRAM&apos;s torso-goal-unreachable failure would correspond to a (ReachabilityFailure and TorsoFailure), whereas something like CRAM&apos;s torso-low-level-failure would correspond to (TorsoFailure and (MechanicalFailure or ElectricalFailure)).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#GeometricComponent -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#GeometricComponent">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#SoftwareAgent"/>
+        <rdfs:label>Geometric component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureDiagnosis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Geometric failure diagnosis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityChecker -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityChecker">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityQuerying -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityQuerying">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricQuerying"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#GeometricQuerying -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#GeometricQuerying">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/ROS.owl#Querying"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#hasSoftwareAgent"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Geometric querying</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#HardPlanningProblem -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#HardPlanningProblem">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#MotionPlanner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>This Diagnosis explains a Timeout error produced by a planner by indicating that the planner could not find a solution within the allocated time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#HeadFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#HeadFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>A failure occurring in a Physical agent&apos;s &quot;head&quot;. Specifically, the actuators and systems an agent uses to reposition some body part carrying high-bandwidth sensors such as cameras.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#IK -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#IK">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#IKQuerying -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#IKQuerying">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricQuerying"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#IK"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#IK"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#IllPosedGoalFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#IllPosedGoalFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#InceptionFailure"/>
+        <rdfs:comment>The Goal the Agent pursues turns out to be impossible because it is self-contradictory, or forbidden by physical laws and interactions.
+
+A distinction should be made between goals that are impossible for a particular Agent because it lacks the relevant capabilities (which is covered by CapabilityFailure) and goals that are impossible for any, or at least for a wide class of Agents, which is covered by this class.
+
+As an example, an Agent with a non-functioning mobile base cannot navigate to some goal location because it temporarily lacks the capability of locomotion. This would be a CapabilityFailure.
+
+Suppose instead that an Agent is given as a goal to navigate to a location already occupied by some other physical object. Unless the Agent is a ghost, it cannot get there. This would be an IllPosedGoalFailure.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#InceptionFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#InceptionFailure">
+        <owl:equivalentClass rdf:resource="http://www.ease-crc.org/ont/geom.owl#PlanningPhase"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/geom.owl#PerformanceFailure"/>
+        <rdfs:comment>A failure of inception is one which prevents an Agent from even undertaking an Action.
+
+Note, it is often the case that computer systems report InceptionFailures during the execution of a Task, rather than reporting them only at the beginning. 
+
+This happens for example when a top-level task fails because one of its subtasks cannot begin.
+
+So an InceptionFailure signals that there exists a subtask of the failed task such that the action that would have executed the subtask couldn&apos;t be begun.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#LocomotorFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#LocomotorFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>A failure occurring in a Physical agent&apos;s &quot;legs&quot; or &quot;(mobile) base&quot;.
+
+Legs, mobile bases, and similar body parts are those that allow an agent to move its entire body through the environment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#MechanicalFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#MechanicalFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyFailure"/>
+        <rdfs:comment>A failure involving a mechanical system that is part of one Physical object participant to the classified Event. What is considered important for this failure is the nature of the physical interactions (ie., mechanical) rather than their locus at particular body parts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#MotionPlanner -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#MotionPlanner">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#MotionPlanning -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#MotionPlanning">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricQuerying"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#MotionPlanner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#MotionPlanner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#MotionPlanningFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#MotionPlanningFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#IllPosedGoalFailure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureNarrative"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureExplanation"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:unionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithMovableObject"/>
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#HardPlanningProblem"/>
+                                                        </owl:unionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#NoFeasiblePlacement -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#NoFeasiblePlacement">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis"/>
+        <rdfs:comment>it means that no enough rooms to place the objects or the placement room is too small</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#NoIK -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#NoIK">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFailureDiagnosis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#IK"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ObjectFeatureChecker -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ObjectFeatureChecker">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityChecker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ObjectLost -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ObjectLost">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#ResourceDepletionFailure"/>
+        <rdfs:comment>An Agent loses or damages beyond usefulness a necessary object for the continuation of an Action.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ObjectNotFound -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ObjectNotFound">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#ResourceNotAcquired"/>
+        <rdfs:comment>An Agent performs an action, or series of actions, meant to locate some object of interest. Upon completion of these actions, the object of interest has not been found.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ObjectUnavailable -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ObjectUnavailable">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#ResourceAvailabilityFailure"/>
+        <rdfs:comment>An Agent cannot begin an action because some necessary object is not present.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PerformanceFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PerformanceFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+        <rdfs:comment>A failure of performance is one which prevents the completion of an Agent&apos;s action.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PhysicalFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+                                <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Classifies Events with some Physical object participants.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PlacementFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PlacementFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PerformanceFailure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureNarrative"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureExplanation"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:unionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithFixedObject"/>
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithMovableObject"/>
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#NoFeasiblePlacement"/>
+                                                        </owl:unionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PlacementRegionChecker -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PlacementRegionChecker">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityChecker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PlacementRegionQuerying -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PlacementRegionQuerying">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#GeometricFeasibilityQuerying"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#PlacementRegionChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#isAnsweredBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#PlacementRegionChecker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PlanningPhase -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PlanningPhase">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureSymptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#PursuedGoal -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#PursuedGoal">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureNarrativeRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#QueryingResult -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#QueryingResult">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#hasStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingStatus"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#QueryingStatus -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#QueryingStatus">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasDataValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ReachabilityFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ReachabilityFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#CapabilityFailure"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PhysicalFailure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureNarrative"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#FailureExplanation"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Class>
+                                                        <owl:unionOf rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithFixedObject"/>
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#CollisionWithMovableObject"/>
+                                                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/geom.owl#NoIK"/>
+                                                        </owl:unionOf>
+                                                    </owl:Class>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A physical Agent cannot reach a physical object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ResourceAvailabilityFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ResourceAvailabilityFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#InceptionFailure"/>
+        <rdfs:comment>A failure preventing an Agent from undertaking an Action because the prerequisite resources are not available.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ResourceDepletionFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ResourceDepletionFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#PerformanceFailure"/>
+        <rdfs:comment>A failure preventing an Agent from completing an Action because necessary resources have run out while the Action was being performed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#ResourceNotAcquired -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#ResourceNotAcquired">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#EndStateFailure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#SensorFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#SensorFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>A failure occurring in a Physical agent&apos;s sensor or transducer. This is a body part the agent uses to convert some signal from its environment into data it can access.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#SoftwareAgent -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#SuccessResult -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#SuccessResult">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingResult"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#TaskFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#TaskFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/geom.owl#FailureNarrative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Situation which interprets a series of Events as the failed execution of some task(s).
+
+In other words, there needs to be an Event, with an Agent as an effective cause; further, the Agent should be pursuing some Goal, which it does by following a Plan to complete a Task.
+
+What differentiates this from a usual PlanExecution is that, further, the outcome of the Agent&apos;s actions are in some way not conformant to what the Agent intended, or is believed to have intended.
+
+Examples: 
+
+a) a robot has the task to transport a cup from a sink to a table. While in transit, the robot drops the cup and it shatters. This collection of events, together with the knowledge of the robot task and goal, constitutes a failure situation.
+
+b) we watch Alice pick up a cup from a sink and move towards the table; we assume she intends to bring the cup to the table. While transporting the cup, Alice drops it and the cup shatters. Given our assumption about Alice&apos;s motives and our observation of what happened, we conceptualize this situation as a TaskFailure. Note however that if we come to believe Alice actually intended to drop the cup, the TaskFailure situation no longer is a valid interpretation of the observed events.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#Timeout -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#Timeout">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#ResourceDepletionFailure"/>
+        <rdfs:comment>Communication failed because a waiting period expired.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#TorsoFailure -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#TorsoFailure">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#BodyPartFailure"/>
+        <rdfs:comment>This is a failure located in a  Physical Agent&apos;s &quot;torso&quot;: a body part that serves as a base for the agent&apos;s arms.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#blockingObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/geom.owl#blockingObject">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/geom.owl#TaskFailure"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#fail -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/geom.owl#fail">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingStatus"/>
+        <DUL:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</DUL:hasDataValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/geom.owl#success -->
+
+    <owl:NamedIndividual rdf:about="http://www.ease-crc.org/ont/geom.owl#success">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/geom.owl#QueryingStatus"/>
+        <DUL:hasDataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</DUL:hasDataValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsCause"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#describesAsTreatment"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Diagnosis"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRole"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Narrative"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/geom.owl#narrativeRoleOf"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
